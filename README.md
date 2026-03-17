@@ -1,72 +1,72 @@
+# qdl-benchmark-optical-cavity
 
-# Optical Cavity Residual-First Benchmark
+Minimal reproducible demonstration of residual-first model comparison using optical cavity resonance scaling.
 
-Minimal reproducible benchmark demonstrating **residual-first model comparison** using optical cavity resonance data.
+## Status
 
-This repository accompanies the Quantized Dimensional Ledger (QDL) benchmarking program.
+This repository is a **methodological demo benchmark**.  
+It illustrates the residual-first comparison workflow on a simple cavity-mode dataset.
+
+This is not yet an executed public-data benchmark.
 
 ---
 
-## Benchmark idea
+## Model
 
-Two model families are compared.
+Optical cavity resonance frequencies:
 
-### Baseline model
-
+Baseline model:
 f = m c / (2L)
 
-where
-
-- f = resonance frequency
-- m = mode index
-- c = speed of light
-- L = cavity length (fitted)
-
-### Reduced model
-
+Reduced model:
 f = m c / (2L0)
 
-where L0 is fixed.
+where:
+
+- m = mode index
+- c = speed of light
+- L = fitted cavity length
+- L0 = fixed reference length
 
 ---
 
-## Residual-first interpretation
+## Method
 
-Evaluation proceeds in the following order:
+1. Fit baseline model (estimate L)
+2. Compute predicted frequencies
+3. Compare residuals:
+   - RMSE
+   - Durbin–Watson statistic
 
-1. Fit both model families
-2. Inspect residual structure
-3. Compare RMSE / AIC / BIC afterward
-
-The goal is to detect structured residual trends rather than simply minimize error magnitude.
-
----
-
-## Repository structure
-
-qdl-benchmark-optical-cavity
-│
-├── notebook.ipynb
-├── data/data.csv
-└── outputs/
+The goal is to evaluate **residual structure**, not just fit quality.
 
 ---
 
-## Running the benchmark
+## Files
 
-Open **notebook.ipynb** and run all cells.
+- `notebook.ipynb` — reproducible benchmark
+- `data.csv` — cavity mode dataset
 
-The notebook will:
+---
 
-- load the dataset
-- fit the baseline model
-- compute the reduced model
-- generate residual statistics
+## Run
+
+Open `notebook.ipynb` and run all cells.
+
+Compatible with:
+- Google Colab
+- Jupyter Notebook
 
 ---
 
 ## Program context
 
-This repository is part of the **QDL Physics Institute experimental benchmarking program**.
+Part of the QDL Physics Institute benchmarking program:
 
 https://qdlphysics.org
+
+---
+
+## Notes
+
+This demo benchmark will be extended to a public-data experimental benchmark in a future version.
