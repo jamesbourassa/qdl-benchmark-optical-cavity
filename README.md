@@ -1,3 +1,5 @@
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jamesbourassa/qdl-benchmark-optical-cavity/blob/main/notebook.ipynb)
+
 # qdl-benchmark-optical-cavity
 
 Minimal reproducible demonstration of residual-first model comparison using optical cavity resonance scaling.
